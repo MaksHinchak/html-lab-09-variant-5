@@ -1,0 +1,21 @@
+{
+  "audioRecordings": 2,
+  "videoRecordings": 2,
+  "durations": {
+    "audio0": 1.589932,
+    "audio1": 3.179864,
+    "video0": 4,
+    "video1": 4
+  },
+  "webmDuration": 4,
+  "selection": true,
+  "playback": true,
+  "mutualPause": true,
+  "stopAndReset": true,
+  "downloadsUpdate": true,
+  "nativeNoJsPlayers": true,
+  "mobileWidth": 390,
+  "htmlPages": 11,
+  "localLinks": 196,
+  "browserErrors": []
+}
