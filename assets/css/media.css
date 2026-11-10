@@ -1,0 +1,8 @@
+.media-section { margin: 28px 0; padding-top: 16px; border-top: 1px solid var(--line); }
+.media-section form { box-sizing: border-box; max-width: none; }
+.media-section select { max-width: none; }
+.media-section figure { margin: 20px 0; padding: 18px; border: 1px solid var(--line); border-radius: 12px; background: #f2f8fb; }
+.media-section audio, .media-section video { display: block; width: 100%; }
+.media-section video { aspect-ratio: 3 / 2; background: #0c3158; height: auto; }
+.media-section figcaption { margin-top: 14px; }
+.media-status { min-height: 1.6em; color: #174a7e; }

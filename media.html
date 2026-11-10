@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="author" content="Максим Гінчак">
+  <title>ByteMarket - Медіабібліотека</title>
+  <link rel="stylesheet" href="assets/css/styles.css">
+  <link rel="stylesheet" href="assets/css/javascript.css">
+  <link rel="stylesheet" href="assets/css/media.css">
+  <script src="assets/js/events.js" defer></script>
+  <script src="assets/js/media.js" defer></script>
+</head>
+<body>
+  <header class="site-header"><h1>ByteMarket</h1><nav id="site-navigation" aria-label="Головна навігація">
+      <a href="index.html">Автор</a>
+      <a href="company.html">Про компанію</a>
+      <a href="news.html">Новини</a>
+      <a href="lists.html">Списки</a>
+      <a href="menu.html">Меню</a>
+      <a href="tables.html">Таблиці</a>
+      <a href="forms.html">Форми</a>
+      <a href="svg.html">SVG</a>
+      <a href="javascript.html">JavaScript</a>
+          <a href="canvas.html">Canvas</a>
+          <a class="active" aria-current="page" href="media.html">Медіабібліотека</a>
+    </nav></header>
+  <main class="site-main">
+    <p class="task-label">ЛАБОРАТОРНА №9 · ВАРІАНТ 5</p>
+    <h2>Медіабібліотека</h2>
+    <p>Два звукові приклади та два короткі відео ByteMarket. Виберіть запис у меню й запустіть відтворення. Зображення фігур продовжують тему попередньої роботи.</p>
+    <noscript><p>Стандартні програвачі відтворюють початкові записи. Для вибору інших ресурсів і спільної кнопки зупинки увімкніть JavaScript.</p></noscript>
+    <section class="media-section" id="audio-library">
+      <h2>Аудіобібліотека</h2>
+      <form id="audio-menu">
+        <label for="audio-select">Аудіозапис</label>
+        <select id="audio-select"><option value="0">Сигнал готовності</option><option value="1">Послідовність частот</option></select>
+        <div class="task-actions"><button type="submit" disabled>Відтворити аудіо</button></div>
+      </form>
+      <figure>
+        <audio id="audio-player" controls preload="metadata">
+          <source src="assets/media/ready.mp3" type="audio/mpeg">
+          Браузер не підтримує аудіопрогравач.
+        </audio>
+        <figcaption id="audio-caption">Сигнал готовності. Три висхідні ноти. Власний синтезований сигнал.</figcaption>
+      </figure>
+      <p><a id="audio-download" href="assets/media/ready.mp3" download>Завантажити обране аудіо</a></p>
+      <p class="media-status" id="audio-status" role="status">Готово до відтворення.</p>
+    </section>
+    <section class="media-section" id="video-library">
+      <h2>Відеобібліотека</h2>
+      <form id="video-menu">
+        <label for="video-select">Відеозапис</label>
+        <select id="video-select"><option value="0">Переміщення фігур</option><option value="1">Обертання та масштаб</option></select>
+        <div class="task-actions"><button type="submit" disabled>Відтворити відео</button></div>
+      </form>
+      <figure>
+        <video id="video-player" controls playsinline preload="metadata" width="720" height="480" poster="assets/media/movement-poster.png">
+          <source src="assets/media/movement.mp4" type="video/mp4">
+          <source src="assets/media/movement.webm" type="video/webm">
+          Браузер не підтримує відеопрогравач.
+        </video>
+        <figcaption id="video-caption">Переміщення фігур. Коло й верхній квадрат змінюють положення. Власний ролик, 4 секунди, без звукової доріжки.</figcaption>
+      </figure>
+      <p><a id="video-download" href="assets/media/movement.mp4" download>Завантажити обране відео MP4</a></p>
+      <p class="media-status" id="video-status" role="status">Готово до відтворення.</p>
+    </section>
+    <div class="task-actions"><button id="stop-media" type="button" disabled>Зупинити все</button></div>
+    <p id="library-status" role="status">Під час запуску одного програвача інший автоматично переходить на паузу.</p>
+    <aside class="interaction-panel" aria-label="Журнал подій">
+      <h2>Журнал подій</h2>
+      <p id="interaction-status" role="status">Взаємодійте зі сторінкою, щоб побачити повідомлення.</p>
+      <ol id="event-log" aria-label="Останні 40 подій"></ol>
+      <button id="clear-events" type="button">Очистити журнал</button>
+    </aside>
+  </main>
+  <footer class="site-footer"><small>Лабораторна робота №9. Варіант 5.</small></footer>
+</body>
+</html>
