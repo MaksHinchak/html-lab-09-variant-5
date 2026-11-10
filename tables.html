@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8">
+  <meta name="author" content="Максим Гінчак">
+  <meta name="description" content="Таблиці товарів ByteMarket. Лабораторна робота №8, варіант 5.">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ByteMarket — таблиці товарів</title>
+  <link rel="icon" href="assets/images/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="assets/css/styles.css">
+  <link rel="stylesheet" href="assets/css/tables.css">
+  <link rel="stylesheet" href="assets/css/javascript.css">
+  <script src="assets/js/events.js" defer></script>
+</head>
+<body>
+  <header class="site-header">
+    <h1>ByteMarket</h1>
+    <nav id="site-navigation" aria-label="Головна навігація">
+      <a href="index.html">Автор</a>
+      <a href="company.html">Про компанію</a>
+      <a href="news.html">Новини</a>
+      <a href="lists.html">Списки</a>
+      <a href="menu.html">Меню</a>
+      <a class="active" aria-current="page" href="tables.html">Таблиці</a>
+      <a href="forms.html">Форми</a>
+      <a href="svg.html">SVG</a>
+      <a href="javascript.html">JavaScript</a>
+          <a href="canvas.html">Canvas</a>
+    </nav>
+  </header>
+  <main class="site-main">
+    <section class="content-section" aria-labelledby="catalog-title">
+      <p class="eyebrow">Каталог комплектуючих</p>
+      <h2 id="catalog-title">Техніка для ваших завдань</h2>
+      <p>Графічні адаптери, накопичувачі, оптичні приводи та аксесуари для комп’ютерів.
+        Порівняйте характеристики й умови придбання в одному каталозі.</p>
+      <p class="catalog-note">Навчальний каталог: назви моделей, ціни й умови придумані.
+        Усі суми наведено в гривнях.</p>
+      <div class="table-scroll schema-scroll" role="region" aria-label="Каталог товарів із об’єднаними комірками" tabindex="0">
+        <table id="variant-five-table" class="variant-table" bgcolor="#ffffff" border="1" cellpadding="10" cellspacing="0" aria-describedby="catalog-key">
+          <caption class="table-caption" lang="uk">Таблиця 1. Товари й умови придбання</caption>
+          <colgroup>
+            <col span="1" class="number-column" charoff="0">
+            <col span="1" class="model-column">
+            <col span="1" class="interface-column">
+            <col span="1" class="description-column">
+            <col span="1" class="price-column">
+            <col span="1" class="stock-column">
+            <col span="1" class="warranty-column">
+            <col span="1" class="delivery-column">
+            <col span="1" class="status-column">
+          </colgroup>
+          <thead id="catalog-head" class="table-head" char="," align="center" valign="middle">
+            <tr title="Основні групи стовпців" align="center" char="," bgcolor="#ffffff">
+              <th id="group" rowspan="3" scope="col" axis="category">№</th>
+              <th id="product" colspan="2" scope="colgroup" axis="product">Товар</th>
+              <th id="description" scope="col" axis="description">Опис</th>
+              <th id="terms" colspan="4" scope="colgroup" axis="purchase">Умови придбання</th>
+              <th id="status" rowspan="3" scope="col" axis="status">Стан</th>
+            </tr>
+            <tr title="Характеристики товарів та групи умов">
+              <th id="model" rowspan="2" headers="product" scope="col" axis="model">Модель</th>
+              <th id="interface" rowspan="2" headers="product" scope="col" axis="interface">Інтерфейс</th>
+              <th id="purpose" rowspan="2" headers="description" scope="col" axis="purpose">Застосування</th>
+              <th id="availability" colspan="2" headers="terms" scope="colgroup" axis="availability">Ціна / склад</th>
+              <th id="service" colspan="2" headers="terms" scope="colgroup" axis="service">Сервіс</th>
+            </tr>
+            <tr title="Деталізація умов придбання">
+              <th id="price" headers="terms availability" scope="col" axis="price">Ціна</th>
+              <th id="stock" headers="terms availability" scope="col" axis="stock">Шт.</th>
+              <th id="warranty" headers="terms service" scope="col" axis="warranty">Міс.</th>
+              <th id="delivery" headers="terms service" scope="col" axis="delivery">Дні</th>
+            </tr>
+          </thead>
+          <tbody id="catalog-body">
+            <tr title="Графічні адаптери: стандартна комплектація" class="group-start">
+              <th id="gpu" rowspan="2" scope="rowgroup">01</th>
+              <td id="gpu-model" class="model-cell" style="font-weight: 700;" axis="model" headers="gpu model">BM Vision 8G</td>
+              <td headers="gpu interface">PCIe 4.0</td>
+              <td headers="gpu purpose">Ігри та робота з графікою, 8 ГБ пам’яті</td>
+              <td class="numeric" headers="gpu price">8 900</td>
+              <td class="numeric" headers="gpu stock">12</td>
+              <td colspan="2" headers="gpu warranty delivery">24 міс. · 2 дні</td>
+              <td rowspan="2" headers="gpu status" class="status-cell">Є</td>
+            </tr>
+            <tr title="Графічні адаптери: комплект із кабелем">
+              <td colspan="2" headers="gpu model interface">BM Vision 8G + кабель HDMI</td>
+              <td headers="gpu purpose">Готовий комплект для підключення монітора</td>
+              <td colspan="2" headers="gpu price stock">9 150 грн · 8 шт.</td>
+              <td headers="gpu warranty">24</td>
+              <td headers="gpu delivery">2</td>
+            </tr>
+            <tr title="Накопичувачі: твердотільний диск" class="group-start">
+              <th id="storage" rowspan="2" scope="rowgroup">02</th>
+              <td headers="storage model">BM Swift 1TB</td>
+              <td headers="storage interface">M.2 NVMe</td>
+              <td headers="storage purpose">Швидке завантаження системи та програм</td>
+              <td class="numeric" headers="storage price">2 600</td>
+              <td class="numeric" headers="storage stock">20</td>
+              <td colspan="2" headers="storage warranty delivery">36 міс. · 1 день</td>
+              <td rowspan="2" headers="storage status" class="status-cell">Є</td>
+            </tr>
+            <tr title="Накопичувачі: жорсткий диск">
+              <td colspan="2" headers="storage model interface">BM Archive 2TB · SATA III</td>
+              <td headers="storage purpose">Зберігання фото, відео та резервних копій</td>
+              <td colspan="2" headers="storage price stock">2 100 грн · 15 шт.</td>
+              <td headers="storage warranty">24</td>
+              <td headers="storage delivery">1</td>
+            </tr>
+            <tr title="Оптичні приводи: внутрішня модель" class="group-start">
+              <th id="optical" rowspan="2" scope="rowgroup">03</th>
+              <td headers="optical model">BM Disc RW</td>
+              <td headers="optical interface">SATA</td>
+              <td headers="optical purpose">Читання CD-ROM, запис CD-R/RW та DVD</td>
+              <td class="numeric" headers="optical price">850</td>
+              <td class="numeric" headers="optical stock">6</td>
+              <td colspan="2" headers="optical warranty delivery">12 міс. · 3 дні</td>
+              <td rowspan="2" headers="optical status" class="status-cell">Є</td>
+            </tr>
+            <tr title="Оптичні приводи: зовнішня модель">
+              <td colspan="2" headers="optical model interface">BM Disc Portable · USB 3.0</td>
+              <td headers="optical purpose">Зовнішній CD/DVD-привід для ноутбука</td>
+              <td colspan="2" headers="optical price stock">1 200 грн · 10 шт.</td>
+              <td headers="optical warranty">12</td>
+              <td headers="optical delivery">2</td>
+            </tr>
+            <tr title="Аксесуари: миша" class="group-start">
+              <th id="accessories" rowspan="2" scope="rowgroup">04</th>
+              <td headers="accessories model">BM Click Pro</td>
+              <td headers="accessories interface">USB</td>
+              <td headers="accessories purpose">Оптична миша, 6 кнопок, 3 200 DPI</td>
+              <td class="numeric" headers="accessories price">450</td>
+              <td class="numeric" headers="accessories stock">30</td>
+              <td colspan="2" headers="accessories warranty delivery">12 міс. · 1 день</td>
+              <td rowspan="2" headers="accessories status" class="status-cell">Є</td>
+            </tr>
+            <tr title="Аксесуари: клавіатура">
+              <td colspan="2" headers="accessories model interface">BM Type Classic · USB</td>
+              <td headers="accessories purpose">Клавіатура з українськими літерами</td>
+              <td colspan="2" headers="accessories price stock">650 грн · 25 шт.</td>
+              <td headers="accessories warranty">12</td>
+              <td headers="accessories delivery">1</td>
+            </tr>
+          </tbody>
+          <tfoot>
+            <tr title="Підсумкові дані каталогу">
+              <th scope="row" aria-label="Підсумок">Σ</th>
+              <td headers="model">8 моделей</td>
+              <td headers="interface">4 категорії</td>
+              <td headers="purpose">Комплектуючі та аксесуари</td>
+              <td headers="price">від 450</td>
+              <td headers="stock">126</td>
+              <td headers="warranty">12–36</td>
+              <td headers="delivery">1–3</td>
+              <td headers="status">Є</td>
+            </tr>
+          </tfoot>
+        </table>
+      </div>
+      <p id="catalog-key" class="catalog-note">01 — графічні адаптери; 02 — накопичувачі;
+        03 — оптичні приводи; 04 — аксесуари. «Шт.» — залишок на складі,
+        «Міс.» — гарантія, «Дні» — термін доставки, «Є» — у наявності.</p>
+    </section>
+    <section class="content-section" aria-labelledby="delivery-title">
+      <h2 id="delivery-title">Як отримати замовлення</h2>
+      <div class="table-scroll" role="region" aria-label="Варіанти доставки" tabindex="0">
+        <table id="delivery-table" class="delivery-table">
+          <caption class="table-caption" lang="uk">Таблиця 2. Способи отримання товару</caption>
+          <colgroup><col span="1"><col span="2" class="delivery-details"></colgroup>
+          <thead id="delivery-head" class="table-head">
+            <tr title="Умови отримання"><th scope="col">Спосіб</th><th scope="col">Термін</th><th scope="col">Вартість</th></tr>
+          </thead>
+          <tbody>
+            <tr title="Самовивіз із магазину"><th scope="row">Самовивіз</th><td>У день підтвердження</td><td class="numeric">Безкоштовно</td></tr>
+            <tr title="Доставка у відділення"><th scope="row">Поштове відділення</th><td>1–3 робочі дні</td><td class="numeric">Від 80 грн</td></tr>
+            <tr title="Кур’єрська доставка"><th scope="row">Кур’єр</th><td>2–3 робочі дні</td><td class="numeric">Від 120 грн</td></tr>
+          </tbody>
+          <tfoot><tr><td colspan="3">Умови наведені для навчального прикладу ByteMarket.</td></tr></tfoot>
+        </table>
+      </div>
+    </section>
+    <aside class="interaction-panel" aria-label="Журнал подій">
+      <h2>Журнал подій</h2>
+      <p id="interaction-status" role="status">Взаємодійте зі сторінкою, щоб побачити повідомлення.</p>
+      <ol id="event-log" aria-label="Останні 40 подій"></ol>
+      <button id="clear-events" type="button">Очистити журнал</button>
+    </aside>
+  </main>
+  <footer class="site-footer"><small>Максим Гінчак · Лабораторна робота №8 · Варіант 5</small></footer>
+</body>
+</html>

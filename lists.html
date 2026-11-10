@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8">
+  <meta name="Author" content="Максим Гінчак">
+  <meta name="Description" content="Списки товарів і послуг ByteMarket — лабораторна робота №7">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ByteMarket — списки товарів</title>
+  <link rel="stylesheet" href="assets/css/styles.css">
+  <link rel="stylesheet" href="assets/css/javascript.css">
+  <script src="assets/js/events.js" defer></script>
+</head>
+<body>
+  <header class="site-header">
+    <h1>ByteMarket</h1>
+    <nav id="site-navigation" aria-label="Головна навігація">
+      <a href="index.html">Автор</a>
+      <a href="company.html">Про компанію</a>
+      <a href="news.html">Новини</a>
+      <a class="active" aria-current="page" href="lists.html">Списки</a>
+      <a href="menu.html">Меню</a>
+      <a href="tables.html">Таблиці</a>
+      <a href="forms.html">Форми</a>
+      <a href="svg.html">SVG</a>
+      <a href="javascript.html">JavaScript</a>
+          <a href="canvas.html">Canvas</a>
+    </nav>
+  </header>
+
+  <main class="site-main">
+    <section class="content-section" id="categories">
+      <p class="eyebrow">Лабораторна робота №8 · Варіант 5</p>
+      <h2>Наші категорії</h2>
+      <p>Асортимент віртуального магазину комп’ютерних аксесуарів подано як маркований список.</p>
+      <ul class="catalog-list" compact title="Категорії ByteMarket" start="1">
+        <li class="catalog-item" id="graphics-item" title="Графічні адаптери">Графічні адаптери — дискретні та інтегровані моделі.</li>
+        <li class="catalog-item" id="optical-item" title="Оптичні пристрої">Пристрої CDROM/CDRW — читання та запис дисків.</li>
+        <li class="catalog-item" id="storage-item" title="Накопичувачі">Вінчестери й SSD — зберігання файлів та резервних копій.</li>
+      </ul>
+    </section>
+
+    <section class="content-section" id="selection-steps">
+      <h2>Як обрати комплектуючі</h2>
+      <p>Послідовність дій показано нумерованим списком.</p>
+      <ol class="steps-list" id="buying-steps" type="1" compact>
+        <li class="step-item" id="step-compatibility" title="Сумісність">Перевірити сумісність комплектуючого з комп’ютером.</li>
+        <li class="step-item" id="step-specifications" title="Характеристики">Порівняти пам’ять, частоту або об’єм.</li>
+        <li class="step-item" id="step-order" title="Замовлення">Оформити запит через форму на сторінці компанії.</li>
+      </ol>
+      <p>Для графічного адаптера найважливіші обсяг відеопам’яті, живлення та інтерфейс підключення.</p>
+    </section>
+
+    <section class="content-section" id="terms">
+      <h2>Словник покупця</h2>
+      <p>Терміни та їхні пояснення подано списком визначень.</p>
+      <dl class="terms-list" title="Визначення основних термінів" style="margin-bottom: 20px;">
+        <dt>GPU</dt>
+        <dd class="term-definition" title="Графічний процесор">Графічний процесор, що обробляє зображення.</dd>
+        <dt>CDRW</dt>
+        <dd class="term-definition" title="Оптичний привід">Оптичний пристрій, який може читати й записувати CD-диски.</dd>
+        <dt>HDD</dt>
+        <dd class="term-definition" title="Вінчестер">Накопичувач на магнітних дисках для зберігання даних.</dd>
+      </dl>
+    </section>
+
+    <aside class="list-callout">
+      <h2>Швидкий перехід</h2>
+      <p>На <a href="menu.html">сторінці меню</a> є посилання на всі частини сайту та розділи цієї сторінки.</p>
+    </aside>
+    <aside class="interaction-panel" aria-label="Журнал подій">
+      <h2>Журнал подій</h2>
+      <p id="interaction-status" role="status">Взаємодійте зі сторінкою, щоб побачити повідомлення.</p>
+      <ol id="event-log" aria-label="Останні 40 подій"></ol>
+      <button id="clear-events" type="button">Очистити журнал</button>
+    </aside>
+  </main>
+  <footer class="site-footer"><small>Максим Гінчак · Лабораторна робота №8 · Варіант 5</small></footer>
+</body>
+</html>

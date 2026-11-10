@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="animated-drawing" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 780 540" width="100%" height="100%" role="img" aria-labelledby="animated-title animated-desc">
+  <title id="animated-title">Анімований малюнок варіанта 5</title>
+  <desc id="animated-desc">Два кола, шість прямокутників і ромб синього кольору на осях X та Y. Центри кіл: (-2, 1) і (1, 1), радіус 1. Вершини ромба: (2, -1), (3, 0), (4, -1), (3, -2).</desc>
+  <defs>
+    <symbol id="animated-box" viewBox="0 0 1 1" preserveAspectRatio="none">
+      <rect width="1" height="1" />
+    </symbol>
+    <marker id="animated-arrow" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto" markerUnits="userSpaceOnUse">
+      <path d="M0 0 L6 3 L0 6 Z" fill="black" />
+    </marker>
+  </defs>
+  <g id="animated-shapes" transform="translate(290 245) scale(72 -72)" style="fill: #0000ff;" stroke="black" stroke-width="0.025">
+    <circle id="animated-left-circle" cx="-2" cy="1" r="1">
+      <animate attributeName="fill" values="#0000ff;#ff6b35;#0000ff" dur="4s" repeatCount="indefinite" />
+    </circle>
+    <g transform="translate(1 1)">
+      <g id="animated-scale">
+        <animateTransform attributeName="transform" type="scale" values="1;0.72;1" dur="5s" repeatCount="indefinite" />
+        <circle id="animated-right-circle" r="1" />
+      </g>
+    </g>
+    <use id="animated-left-bar" href="#animated-box" x="-3" y="-1" width="2" height="1" />
+    <g id="animated-translate">
+      <animateTransform attributeName="transform" type="translate" values="0 0;0 0.5;0 0" dur="5s" repeatCount="indefinite" />
+      <use id="animated-top-box" href="#animated-box" x="2" y="1" width="1" height="1" />
+    </g>
+    <use id="animated-step-box" href="#animated-box" x="3" y="0" width="1" height="1" />
+    <use id="animated-bottom-left-box" href="#animated-box" x="0" y="-2" width="1" height="1" />
+    <use id="animated-bottom-bar" href="#animated-box" x="1" y="-3" width="2" height="1" />
+    <g transform="translate(4.5 -1.5)">
+      <g id="animated-skew">
+        <animateTransform attributeName="transform" type="skewX" values="0;25;-25;0" dur="7s" repeatCount="indefinite" />
+        <use id="animated-bottom-right-box" href="#animated-box" x="-0.5" y="-0.5" width="1" height="1" />
+      </g>
+    </g>
+    <g transform="translate(3 -1)">
+      <g id="animated-rotate">
+        <animateTransform attributeName="transform" type="rotate" from="0" to="360" dur="6s" repeatCount="indefinite" />
+        <polygon id="animated-diamond" points="-1,0 0,1 1,0 0,-1" />
+      </g>
+    </g>
+  </g>
+  <g id="animated-axes" style="fill: none;" stroke="black" stroke-width="2">
+    <line x1="38" y1="245" x2="736" y2="245" marker-end="url(#animated-arrow)" />
+    <line x1="290" y1="493" x2="290" y2="35" marker-end="url(#animated-arrow)" />
+    <line x1="74" y1="235" x2="74" y2="255" />
+    <line x1="146" y1="235" x2="146" y2="255" />
+    <line x1="218" y1="235" x2="218" y2="255" />
+    <line x1="362" y1="235" x2="362" y2="255" />
+    <line x1="434" y1="235" x2="434" y2="255" />
+    <line x1="506" y1="235" x2="506" y2="255" />
+    <line x1="578" y1="235" x2="578" y2="255" />
+    <line x1="650" y1="235" x2="650" y2="255" />
+    <line x1="280" y1="461" x2="300" y2="461" />
+    <line x1="280" y1="389" x2="300" y2="389" />
+    <line x1="280" y1="317" x2="300" y2="317" />
+    <line x1="280" y1="173" x2="300" y2="173" />
+    <line x1="280" y1="101" x2="300" y2="101" />
+  </g>
+  <g style="fill: black;" font-family="Times New Roman, serif" font-size="23">
+    <text x="748" y="274">X</text>
+    <text x="310" y="45">Y</text>
+    <text x="278" y="274" text-anchor="end">0</text>
+    <text x="74" y="274" text-anchor="middle">-3</text>
+    <text x="218" y="274" text-anchor="middle">-1</text>
+    <text x="362" y="274" text-anchor="middle">1</text>
+    <text x="434" y="274" text-anchor="middle">2</text>
+    <text x="506" y="274" text-anchor="middle">3</text>
+    <text x="578" y="274" text-anchor="middle">4</text>
+    <text x="650" y="274" text-anchor="middle">5</text>
+    <text x="277" y="469" text-anchor="end">-3</text>
+    <text x="277" y="397" text-anchor="end">-2</text>
+    <text x="277" y="325" text-anchor="end">-1</text>
+    <text x="277" y="181" text-anchor="end">1</text>
+    <text x="277" y="109" text-anchor="end">2</text>
+  </g>
+</svg>

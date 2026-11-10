@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="author" content="Максим Гінчак">
+  <title>ByteMarket - Растрова графіка Canvas</title>
+  <link rel="stylesheet" href="assets/css/styles.css">
+  <link rel="stylesheet" href="assets/css/javascript.css">
+  <link rel="stylesheet" href="assets/css/canvas.css">
+  <script src="assets/js/events.js" defer></script>
+  <script src="assets/js/canvas.js" defer></script>
+</head>
+<body>
+  <header class="site-header"><h1>ByteMarket</h1><nav id="site-navigation" aria-label="Головна навігація">
+      <a href="index.html">Автор</a>
+      <a href="company.html">Про компанію</a>
+      <a href="news.html">Новини</a>
+      <a href="lists.html">Списки</a>
+      <a href="menu.html">Меню</a>
+      <a href="tables.html">Таблиці</a>
+      <a href="forms.html">Форми</a>
+      <a href="svg.html">SVG</a>
+      <a href="javascript.html">JavaScript</a>
+          <a class="active" aria-current="page" href="canvas.html">Canvas</a>
+    </nav></header>
+  <main class="site-main">
+    <p class="task-label">ЛАБОРАТОРНА №8 · ВАРІАНТ 5</p>
+    <h2>Растрова графіка Canvas</h2>
+    <p>Ті самі 9 синіх фігур варіанта 5, намальовані командами JavaScript на полотні Canvas. Виберіть фігуру, задайте параметри й натисніть «Застосувати».</p>
+    <noscript><p>Увімкніть JavaScript, щоб побачити малюнок і виконати перетворення.</p></noscript>
+    <figure class="canvas-frame" id="canvas-example">
+      <canvas id="drawing-canvas" width="780" height="540" role="img" aria-label="Варіант 5. Два кола, шість прямокутників і ромб на осях X та Y">Два кола, шість прямокутників і ромб синього кольору.</canvas>
+      <figcaption>Варіант 5. Одна одиниця координат дорівнює 72 одиницям полотна.</figcaption>
+    </figure>
+    <section id="canvas-interaction">
+      <h2>Переміщення та перетворення</h2>
+      <form id="canvas-controls">
+        <label for="figure-select">Фігура</label>
+        <select id="figure-select">
+          <option value="0">Ліве коло</option><option value="1">Праве коло</option>
+          <option value="2">Лівий прямокутник</option><option value="3">Верхній квадрат</option>
+          <option value="4">Квадрат сходинки</option><option value="5">Нижній лівий квадрат</option>
+          <option value="6">Нижній прямокутник</option><option value="7">Нижній правий квадрат</option>
+          <option value="8" selected>Ромб</option>
+        </select>
+        <div class="canvas-fields">
+          <label for="dx">Зсув по X<input id="dx" type="number" min="-0.5" max="0.5" step="0.1" value="0" required></label>
+          <label for="dy">Зсув по Y<input id="dy" type="number" min="-0.5" max="0.5" step="0.1" value="0" required></label>
+          <label for="angle">Кут у градусах<input id="angle" type="number" min="-180" max="180" step="1" value="0" required></label>
+          <label for="scale">Масштаб<input id="scale" type="number" min="0.5" max="1.25" step="0.05" value="1" required></label>
+        </div>
+        <div class="task-actions"><button type="submit" disabled>Застосувати</button><button type="button" id="canvas-reset" disabled>Відновити всі фігури</button></div>
+        <p>Додатний Y переміщує вгору. Параметри кожної фігури зберігаються окремо. Для прикладу виберіть ромб, X = 0.5, Y = 0.5, кут = 45°, масштаб = 0.75.</p>
+      </form>
+      <p id="canvas-status" role="status">Початковий малюнок варіанта 5.</p>
+    </section>
+    <aside class="interaction-panel" aria-label="Журнал подій">
+      <h2>Журнал подій</h2>
+      <p id="interaction-status" role="status">Взаємодійте зі сторінкою, щоб побачити повідомлення.</p>
+      <ol id="event-log" aria-label="Останні 40 подій"></ol>
+      <button id="clear-events" type="button">Очистити журнал</button>
+    </aside>
+  </main>
+  <footer class="site-footer"><small>Лабораторна робота №8. Варіант 5.</small></footer>
+</body>
+</html>

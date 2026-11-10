@@ -1,0 +1,323 @@
+/* Лабораторна робота №6, варіант 5. Спільне оформлення ByteMarket. */
+:root {
+  color-scheme: light;
+  --ink: #172d3f;
+  --blue: #174a7e;
+  --blue-dark: #0c3158;
+  --aqua: #67d6c0;
+  --paper: #ffffff;
+  --muted: #587083;
+  --line: #c9d8e2;
+}
+
+html { scroll-behavior: smooth; }
+body {
+  box-sizing: border-box;
+  width: min(100% - 32px, 1080px);
+  min-width: 280px;
+  min-height: 100vh;
+  margin: 0 auto;
+  padding: 24px 0 32px;
+  color: var(--ink);
+  background-color: #edf4f7;
+  background-image: url("../images/graphics-card.jpg");
+  background-attachment: scroll;
+  background-position: right top;
+  background-size: 0 0; /* Локальне зображення підключене, але не заважає читанню. */
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Arial, sans-serif;
+  line-height: 160%;
+  direction: ltr;
+  unicode-bidi: normal;
+}
+
+.site-header,
+.site-footer {
+  padding: 24px 30px;
+  color: white;
+  background-color: var(--blue-dark);
+}
+.site-header {
+  border-radius: 20px 20px 0 0;
+  background-image: linear-gradient(115deg, #0c3158, #174a7e 72%, #157983);
+  background-position: 24px 18px;
+  background-attachment: scroll;
+}
+.site-header h1 { margin: 0 0 18px; color: white; letter-spacing: .02em; }
+.site-footer { border-radius: 0 0 20px 20px; }
+.site-footer a { color: white; }
+
+nav { display: flex; flex-wrap: wrap; gap: 8px; }
+nav a {
+  display: inline;
+  padding: 8px 14px;
+  border: 1px solid #b6dce3;
+  border-radius: 999px;
+  color: #e9fbff;
+  text-decoration: none;
+  line-height: normal;
+}
+nav a.active { background: white; color: var(--blue-dark); font-weight: 700; }
+nav a:hover, nav a:focus-visible { background: #d8f9f2; color: var(--blue-dark); outline: 2px solid var(--aqua); }
+
+.site-main {
+  padding: 30px;
+  background: var(--paper);
+  box-shadow: 0 18px 48px #163e591a;
+}
+.content-section { margin-bottom: 30px; }
+.content-section + .content-section { border-top: 1px solid var(--line); padding-top: 28px; }
+.content-section p { max-width: 74ch; }
+.content-section p:first-line { color: #173f66; }
+.intro-note:first-letter { color: #157983; font-size: 1.45em; font-weight: 700; }
+
+h1, h2, h3, h4, h5 { line-height: 1.25; }
+h2, h3, h4, h5 { color: var(--blue-dark); }
+h2 { margin-bottom: 16px; }
+section h2 + p { margin-top: 0; } /* сусідній селектор */
+article p + p { padding-top: 5px; }
+ul li:first-child { font-weight: 700; }
+ul li:last-child { margin-bottom: 0; }
+article:last-of-type { margin-bottom: 28px; }
+:lang(uk) { quotes: "«" "»"; }
+
+img { max-width: 100%; height: auto; }
+.main-image {
+  display: block;
+  width: min(100%, 600px);
+  max-height: 340px;
+  object-fit: cover;
+  object-position: center 42%;
+  border: 3px solid #b6dce3;
+  border-radius: 14px;
+}
+#news-image { height: 300px; }
+
+/* Селектори атрибутів із завдання. */
+img[alt] { background-color: #e8f1f5; }
+a[href="company.html"] { text-underline-offset: 3px; }
+article[class~="story"] { border-left-color: #157983; }
+input:enabled, select:enabled, button:enabled { cursor: pointer; }
+p:empty { display: none; }
+
+.card, .news, .intro-note {
+  padding: 18px 20px;
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  background-color: #f6fbfd;
+}
+.news {
+  margin-bottom: 14px;
+  border-left: 5px solid #157983;
+  overflow: visible;
+}
+.news h2 { margin-top: 0; }
+.news p:last-child { margin-bottom: 0; }
+.news .new-label { color: var(--blue-dark) !important; }
+#news-note { clear: left; }
+#news-note::first-line { font-weight: 600; }
+
+/* Таблиця каталогу й демонстрація груп відображення таблиці. */
+table { width: 100%; border-collapse: collapse; }
+thead { display: table-header-group; }
+tfoot { display: table-footer-group; }
+caption { margin-bottom: 10px; font-weight: 700; text-align: left; }
+th, td { padding: 10px 12px; border: 1px solid var(--line); text-align: left; }
+th { color: white; background: var(--blue); }
+tbody tr:nth-child(even) { background: #f2f8fb; }
+
+form {
+  max-width: 760px;
+  padding: 20px;
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  background: #f6fbfd;
+}
+fieldset { margin: 0 0 16px; padding: 16px; border: 1px dashed #90afc1; border-radius: 10px; }
+fieldset:last-of-type { margin-bottom: 20px; }
+legend { padding: 0 7px; color: var(--blue-dark); font-weight: 700; }
+label { display: block; margin-bottom: 12px; font-weight: 600; }
+label:last-child { margin-bottom: 0; }
+input, select {
+  box-sizing: border-box;
+  display: block;
+  width: 100%;
+  max-width: 500px;
+  min-height: 40px;
+  margin-top: 5px;
+  padding: 8px 10px;
+  border: 1px solid #88a8bb;
+  border-radius: 7px;
+  color: var(--ink);
+  background: white;
+  font: inherit;
+}
+input:focus-visible, select:focus-visible { outline: 3px solid #67d6c0; outline-color: #67d6c0; }
+button {
+  padding: 10px 18px;
+  border: 0;
+  border-radius: 7px;
+  color: white;
+  background: var(--blue);
+  font: inherit;
+}
+button:hover { background: var(--blue-dark); }
+
+pre { max-width: 100%; padding: 15px; overflow: auto; background: #edf4f7; }
+address { font-style: normal; }
+:where(a, button) { outline-offset: 3px; }
+
+/* Навчальна частина: решта значень варіанта 5 показана на реальних блоках.
+   display: compact і run-in — застарілі значення; сучасний браузер їх ігнорує.
+   Тому для відповідних елементів наступна декларація задає працездатну заміну. */
+.legacy-compact { display: compact; display: inline; }
+.legacy-run-in { display: run-in; display: inline; }
+.inline-table-sample { display: inline-table; }
+.static-sample { position: static; z-index: auto; }
+.fixed-sample { position: fixed; right: 12px; bottom: 12px; }
+.float-sample { float: left; margin-right: 12px; }
+.float-reset { float: none; clear: none; }
+.clear-left { clear: left; }
+.bidi-sample { unicode-bidi: bidi-override; direction: ltr; }
+.sizing-sample { width: 100%; min-width: 12rem; height: 40px; min-height: 2rem; }
+.sizing-percent { height: 50%; min-height: 25%; }
+.spacing-sample {
+  margin-right: auto;
+  margin-bottom: auto;
+  margin-left: auto;
+  padding-right: 8px;
+  padding-bottom: 8px;
+  padding-left: 8px;
+}
+.spacing-fixed { margin-right: 10px; margin-bottom: 10px; margin-left: 10px; }
+.border-thin { border-width: thin; border-right-width: thin; border-left-width: thin; }
+.border-sized {
+  border-width: 2px;
+  border-right-width: 3px;
+  border-left-width: 3px;
+  border-bottom-color: #67d6c0;
+  border-right-color: #174a7e;
+  border-left-color: #174a7e;
+}
+.border-none { border-style: none; border-top-style: none; border-right-style: none; }
+.border-groove { border-style: groove; border-top-style: groove; border-right-style: groove; }
+.border-dashed { border-style: dashed; border-top-style: dashed; border-right-style: dashed; }
+.border-ridge { border-style: ridge; border-top-style: ridge; border-right-style: ridge; }
+.normal-line { line-height: normal; }
+.percent-line { line-height: 150%; }
+.align-baseline { vertical-align: baseline; }
+.align-sub { vertical-align: sub; }
+.align-text-bottom { vertical-align: text-bottom; }
+.align-bottom { vertical-align: bottom; }
+.scroll-sample { overflow: auto; }
+.clip-sample { position: absolute; clip: rect(0, 100px, 30px, 0); }
+.visible-sample { visibility: visible; }
+.hidden-sample { visibility: hidden; }
+.outline-sample { outline: 2px solid #67d6c0; outline-color: #67d6c0; }
+.image-position-right { background-image: url("../images/graphics-card.jpg"); background-position: right; }
+.image-position-percent { background-image: url("../images/graphics-card.jpg"); background-position: 25% 50%; }
+
+@media (max-width: 660px) {
+  body { width: 100%; padding: 0; }
+  .site-header, .site-main, .site-footer { padding: 20px; border-radius: 0; }
+  .site-main { overflow-x: auto; }
+  th, td { padding: 8px; font-size: 14px; }
+  nav a { display: inline-block; }
+}
+
+/* Оформлення, перенесене з HTML у спільний CSS. */
+#author-title { text-align: center; }
+.author-greeting { font-size: 18px; }
+.author-interests { color: #333; }
+.author-goals { font-size: 18px; text-align: left; }
+.author-divider { height: 3px; border: 0; background-color: var(--blue); }
+#company-quote { color: var(--blue); }
+.new-label { color: var(--blue); font-weight: 700; }
+#news-list { margin-top: 20px; }
+#old-date { color: #777; }
+#sale-name { font-size: 18px; }
+.break-point { word-break: normal; }
+
+/* Лабораторна №3: списки, меню та посилання. */
+.eyebrow {
+  margin: 0 0 8px;
+  color: var(--muted);
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+}
+
+.catalog-list {
+  list-style-type: square;
+  list-style-image: url("../images/list-marker.svg");
+  list-style-position: outside;
+  padding-left: 28px;
+}
+.catalog-item { margin-bottom: 10px; padding-left: 7px; }
+.catalog-item::marker { color: #157983; }
+
+.steps-list { list-style: none; counter-reset: selection-step; padding-left: 0; }
+.step-item {
+  position: relative;
+  min-height: 36px;
+  margin: 0 0 14px;
+  padding: 8px 10px 8px 52px;
+  counter-increment: selection-step;
+  background: #f6fbfd;
+  border: 1px solid var(--line);
+  border-radius: 9px;
+}
+.step-item::before {
+  content: counter(selection-step);
+  position: absolute;
+  left: 12px;
+  top: 6px;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  color: white;
+  background: var(--blue);
+  text-align: center;
+  line-height: 30px;
+  font-weight: 700;
+}
+.terms-list { max-width: 800px; }
+.terms-list dt { margin-top: 14px; color: var(--blue-dark); font-weight: 700; }
+.terms-list dd { margin: 3px 0 0 22px; padding-bottom: 8px; border-bottom: 1px solid var(--line); }
+.list-callout { padding: 16px 20px; border-left: 4px solid #157983; background: #f6fbfd; }
+.list-callout h2 { margin-top: 0; }
+
+.project-menu, .resource-menu {
+  display: grid;
+  gap: 10px;
+  padding: 0;
+  list-style: none;
+}
+.project-menu { grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); }
+.project-menu li { margin: 0; }
+.project-menu a, .resource-menu a {
+  display: block;
+  padding: 12px 15px;
+  border: 1px solid var(--line);
+  border-radius: 9px;
+  background: #f6fbfd;
+  color: var(--blue-dark);
+  text-decoration: none;
+  font-weight: 600;
+}
+.project-menu a:hover, .resource-menu a:hover { background: #e3f5f2; text-decoration: underline; }
+#section-navigation { margin: 16px 0; }
+#section-navigation a { color: var(--blue-dark); border-color: var(--line); }
+.legacy-menu-item { list-style: none; }
+.legacy-note { color: var(--muted); font-size: 14px; }
+.store-marquee {
+  display: block;
+  padding: 12px;
+  border: 1px dashed #90afc1;
+  border-radius: 8px;
+  background: #f2f8fb;
+}
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  .store-marquee { scroll-behavior: auto; }
+}

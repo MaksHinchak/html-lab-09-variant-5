@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8">
+  <meta name="Author" content="Максим Гінчак">
+  <meta name="Description" content="Новини віртуальної компанії ByteMarket">
+  <meta name="Keywords" content="новини, комп'ютерні аксесуари, ByteMarket">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ByteMarket — новини</title>
+  <link rel="stylesheet" href="assets/css/styles.css">
+  <link rel="stylesheet" href="assets/css/javascript.css">
+  <script src="assets/js/events.js" defer></script>
+</head>
+<body>
+  <header id="news-header" class="page-header site-header">
+    <h1>Новини ByteMarket</h1>
+    <nav id="site-navigation" aria-label="Головна навігація">
+      <a href="index.html">Автор</a>
+      <a href="company.html">Про компанію</a>
+      <a class="active" aria-current="page" href="news.html">Новини</a>
+      <a href="lists.html">Списки</a>
+      <a href="menu.html">Меню</a>
+      <a href="tables.html">Таблиці</a>
+      <a href="forms.html">Форми</a>
+      <a href="svg.html">SVG</a>
+      <a href="javascript.html">JavaScript</a>
+          <a href="canvas.html">Canvas</a>
+    </nav>
+  </header>
+
+  <main class="site-main">
+    <section class="content-section">
+      <h2>Останні події компанії</h2>
+      <p>Натисніть на верхню, середню або нижню частину зображення, щоб перейти до відповідної новини.</p>
+
+      <img
+        src="assets/images/graphics-card.jpg"
+        id="news-image"
+        class="main-image"
+        usemap="#news-map"
+        alt="Комп'ютерні комплектуючі">
+
+      <map
+        name="news-map"
+        tabindex="0"
+        onblur=""
+        accesskey="m"
+        target="_self">
+        <area href="#gpu-news" shape="rect" coords="0,0,960,426" lang="uk" alt="Новина про графічні адаптери">
+        <area href="#optical-news" shape="rect" coords="0,427,960,852" lang="uk" alt="Новина про CDRW">
+        <area href="#drive-news" shape="rect" coords="0,853,960,1280" lang="uk" alt="Новина про накопичувачі">
+      </map>
+    </section>
+
+    <div id="news-list">
+      <article id="gpu-news" class="news story">
+        <h2>Нові графічні адаптери вже у каталозі</h2>
+        <p>
+          <span id="gpu-label" title="Позначка новини" class="new-label">Нове:</span>
+          ми додали дискретні графічні адаптери з пам'яттю 8 ГБ та 12 ГБ.
+          <del id="old-date" lang="uk">Поставка 10 вересня</del>
+          <ins datetime="2026-09-01" lang="uk">Поставка 5 вересня</ins>.
+        </p>
+        <p>Для роботи адаптера рекомендований блок живлення потужністю 650 Вт<sup lang="uk">*</sup>.</p>
+      </article>
+
+      <article id="optical-news" class="news story">
+        <h2>Повернення пристроїв CDRW</h2>
+        <p>
+          Для навчальних кабінетів доступні внутрішні пристрої CDRW зі швидкістю 52x.
+          Вони читають CD-ROM та записують CD-R і CD-RW.
+        </p>
+        <p>Позначення диска: CD-RW<sub id="disk-index" class="index">1</sub>.</p>
+        <p><bdo dir="ltr">CDROM / CDRW</bdo></p>
+      </article>
+
+      <article id="drive-news" class="news story">
+        <h2>Знижка на вінчестери</h2>
+        <p>
+          До кінця місяця діє знижка на HDD об'ємом 1 ТБ і 2 ТБ. Назва акції:
+          <ruby id="sale-name">DISK SALE</ruby>.
+        </p>
+        <p>
+          Детальні характеристики можна знайти на сторінці компанії за адресою
+          company.<wbr class="break-point">html.
+        </p>
+      </article>
+    </div>
+
+    <aside id="news-note" class="card">
+      <h3>Примітка</h3>
+      <p>Усі назви компанії, новини, адреси й товари на цьому сайті вигадані для лабораторної роботи.</p>
+    </aside>
+    <aside class="interaction-panel" aria-label="Журнал подій">
+      <h2>Журнал подій</h2>
+      <p id="interaction-status" role="status">Взаємодійте зі сторінкою, щоб побачити повідомлення.</p>
+      <ol id="event-log" aria-label="Останні 40 подій"></ol>
+      <button id="clear-events" type="button">Очистити журнал</button>
+    </aside>
+  </main>
+
+  <footer class="site-footer">
+    <small>Автор сторінки: Максим Гінчак. Лабораторна робота №8.</small>
+  </footer>
+</body>
+</html>

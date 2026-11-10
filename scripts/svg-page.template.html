@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8">
+  <meta name="author" content="Максим Гінчак">
+  <meta name="description" content="SVG-графіка: варіант 5 лабораторної роботи №6. Статичний малюнок, текст по кривій і п’ять видів анімації.">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ByteMarket — SVG, варіант 5</title>
+  <link rel="icon" href="assets/images/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="assets/css/styles.css">
+  <link rel="stylesheet" href="assets/css/svg.css">
+  <script src="assets/js/svg.js" defer></script>
+  <link rel="stylesheet" href="assets/css/javascript.css">
+  <script src="assets/js/events.js" defer></script>
+</head>
+<body>
+  <header class="site-header">
+    <h1>ByteMarket</h1>
+    <nav id="site-navigation" aria-label="Головна навігація">
+      <a href="index.html">Автор</a><a href="company.html">Про компанію</a>
+      <a href="news.html">Новини</a><a href="lists.html">Списки</a>
+      <a href="menu.html">Меню</a><a href="tables.html">Таблиці</a>
+      <a href="forms.html">Форми</a><a href="svg.html" class="active" aria-current="page">SVG</a>
+      <a href="javascript.html">JavaScript</a>
+          <a href="canvas.html">Canvas</a>
+    </nav>
+  </header>
+  <main class="site-main">
+    <section class="content-section" aria-labelledby="svg-title">
+      <p class="eyebrow">Лабораторна робота №8 · Варіант 5</p>
+      <h2 id="svg-title">Векторна графіка SVG</h2>
+      <p>Малюнок за схемою варіанта 5, текст уздовж кривої та анімація геометричних фігур.</p>
+      <div class="section-links" aria-label="Розділи сторінки">
+        <a href="#static-section">Статичний малюнок</a><a href="#curve-section">Текст по кривій</a>
+        <a href="#animation-section">Анімація</a><a href="#embedding-section">Вбудовування</a>
+      </div>
+    </section>
+    <section id="static-section" class="content-section" aria-labelledby="static-heading">
+      <h2 id="static-heading">1. Статичний малюнок варіанта 5</h2>
+      <p>Два кола радіуса 1, шість прямокутників і ромб. Один крок координатної сітки дорівнює 72 одиницям SVG.</p>
+      <figure id="static-figure" class="svg-figure">
+        {{STATIC}}
+        <figcaption>Центри кіл: (-2; 1) і (1; 1). Центр ромба: (3; -1).</figcaption>
+      </figure>
+      <p><a href="assets/svg/variant5-static.svg" download>Завантажити статичний SVG</a></p>
+    </section>
+    <section id="curve-section" class="content-section" aria-labelledby="curve-heading">
+      <h2 id="curve-heading">2. Текст уздовж кривої</h2>
+      <figure id="curve-figure" class="svg-figure">
+        {{CURVE}}
+        <figcaption>Контур задано через path, напис розташовано на ньому через textPath.</figcaption>
+      </figure>
+    </section>
+    <section id="animation-section" class="content-section" aria-labelledby="animation-heading">
+      <h2 id="animation-heading">3. П’ять ефектів анімації</h2>
+      <p>На початку фігури повторюють статичний малюнок. Далі окремі елементи змінюються з часом.</p>
+      <div class="animation-controls">
+        <button id="toggle-animation" type="button" aria-controls="animated-drawing" aria-pressed="false" disabled>Пауза</button>
+        <button id="restart-animation" type="button" aria-controls="animated-drawing" disabled>Спочатку</button>
+        <span id="animation-status" role="status">Анімація відтворюється.</span>
+      </div>
+      <noscript><p>SVG-анімація працює без JavaScript; кнопки керування потребують JavaScript.</p></noscript>
+      <figure id="animation-figure" class="svg-figure">
+        {{ANIMATED}}
+        <figcaption>Колір, переміщення, обертання, масштабування та перекіс.</figcaption>
+      </figure>
+      <dl class="animation-key">
+        <dt>Колір</dt><dd>Ліве коло: animate, атрибут fill, цикл 4 с.</dd>
+        <dt>Переміщення</dt><dd>Верхній квадрат: animateTransform, translate, цикл 5 с.</dd>
+        <dt>Обертання</dt><dd>Ромб: rotate навколо свого центра, цикл 6 с.</dd>
+        <dt>Масштаб</dt><dd>Праве коло: scale від 1 до 0.72 й назад, цикл 5 с.</dd>
+        <dt>Перекіс</dt><dd>Нижній правий квадрат: skewX від -25° до 25°, цикл 7 с.</dd>
+      </dl>
+      <p><a href="assets/svg/variant5-animated.svg" download>Завантажити анімований SVG</a></p>
+    </section>
+    <section id="embedding-section" class="content-section" aria-labelledby="embedding-heading">
+      <h2 id="embedding-heading">4. Способи вбудовування SVG</h2>
+      <p>Нижче той самий зовнішній файл вбудовано через object, embed та iframe. Основні приклади вище містять SVG безпосередньо в HTML.</p>
+      <div class="embedding-grid">
+        <figure class="embedding-card"><figcaption>object + param</figcaption>
+          <object id="svg-object" data="assets/svg/variant5-static.svg" type="image/svg+xml" width="780" height="540" aria-label="Статичний SVG через object">
+            <!-- Param залишено на вимогу методички. -->
+            <!--suppress HtmlDeprecatedTag,HtmlDeprecatedAttribute,XmlDeprecatedElement -->
+            <param name="view" value="variant-5">
+            <p>Відкрийте <a href="assets/svg/variant5-static.svg">SVG-файл</a>, якщо об’єкт не відображається.</p>
+          </object>
+        </figure>
+        <figure class="embedding-card"><figcaption>embed</figcaption>
+          <embed id="svg-embed" src="assets/svg/variant5-static.svg" type="image/svg+xml" width="780" height="540" title="Статичний SVG через embed">
+        </figure>
+        <figure class="embedding-card"><figcaption>iframe</figcaption>
+          <iframe id="svg-iframe" src="assets/svg/variant5-static.svg" width="780" height="540" title="Статичний SVG через iframe"></iframe>
+        </figure>
+      </div>
+    </section>
+    <aside class="interaction-panel" aria-label="Журнал подій">
+      <h2>Журнал подій</h2>
+      <p id="interaction-status" role="status">Взаємодійте зі сторінкою, щоб побачити повідомлення.</p>
+      <ol id="event-log" aria-label="Останні 40 подій"></ol>
+      <button id="clear-events" type="button">Очистити журнал</button>
+    </aside>
+  </main>
+  <footer class="site-footer"><small>Максим Гінчак · Лабораторна робота №8 · Варіант 5</small></footer>
+</body>
+</html>

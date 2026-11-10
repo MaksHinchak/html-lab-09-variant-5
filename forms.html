@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8">
+  <meta name="author" content="Максим Гінчак">
+  <meta name="description" content="Форма замовлення ByteMarket. Лабораторна робота №8, варіант 5.">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ByteMarket — форми замовлення</title>
+  <link rel="icon" href="assets/images/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="assets/css/styles.css">
+  <link rel="stylesheet" href="assets/css/forms.css">
+  <script src="assets/js/forms.js" defer></script>
+  <link rel="stylesheet" href="assets/css/javascript.css">
+  <script src="assets/js/events.js" defer></script>
+</head>
+<body>
+  <header class="site-header">
+    <h1>ByteMarket</h1>
+    <nav id="site-navigation" aria-label="Головна навігація">
+      <a href="index.html">Автор</a>
+      <a href="company.html">Про компанію</a>
+      <a href="news.html">Новини</a>
+      <a href="lists.html">Списки</a>
+      <a href="menu.html">Меню</a>
+      <a href="tables.html">Таблиці</a>
+      <a href="forms.html" class="active" aria-current="page">Форми</a>
+      <a href="svg.html">SVG</a>
+      <a href="javascript.html">JavaScript</a>
+          <a href="canvas.html">Canvas</a>
+    </nav>
+  </header>
+  <main class="site-main">
+    <section class="content-section" aria-labelledby="forms-title">
+      <p class="eyebrow">Лабораторна робота №8 · Варіант 5</p>
+      <h2 id="forms-title">Зберіть своє замовлення</h2>
+      <p class="form-intro">Оберіть компоненти та заповніть контактні дані. Це навчальний приклад: перевірка й підсумок працюють у браузері, замовлення нікуди не надсилається.</p>
+      <p class="required-note">Поля, позначені зірочкою (*), обов’язкові.</p>
+      <noscript><p>Для локальної перевірки та підсумку увімкніть JavaScript. Без нього кнопки надсилання вимкнені.</p></noscript>
+      <form id="order-form" name="order" autocomplete="on" action="#" class="order-form" dir="ltr" style="font-style: normal;" lang="uk">
+        <fieldset id="contact-fields">
+          <legend lang="uk" title="Контактні дані покупця" dir="ltr">1. Контактна інформація</legend>
+          <div class="form-grid">
+            <div class="field">
+              <!-- Атрибут form у label залишено на вимогу варіанта 5. -->
+              <!--suppress HtmlUnknownAttribute -->
+              <label id="customer-label" for="customer" form="order-form" title="Від 2 до 80 символів">Ім’я та прізвище *</label>
+              <input id="customer" name="customer" type="text" required minlength="2" maxlength="80" autocomplete="name" autofocus style="font-weight: 400;" placeholder="Олена Коваль"></div>
+            <div class="field"><label for="email">Email для підтвердження *</label>
+              <input id="email" name="email" type="email" multiple required autocomplete="email" maxlength="160" placeholder="olena@example.com" aria-describedby="email-hint">
+              <small id="email-hint">Кілька адрес можна вказати через кому.</small></div>
+            <div class="field"><label for="phone">Телефон *</label>
+              <input id="phone" name="phone" type="tel" required autocomplete="tel" maxlength="13" pattern="(\+380|0)[0-9]{9}" placeholder="0671234567" aria-describedby="phone-hint">
+              <small id="phone-hint">0671234567 або +380671234567, без пробілів.</small></div>
+            <div class="field"><label for="website">Сайт компанії</label>
+              <input id="website" name="website" type="url" autocomplete="url" maxlength="200" placeholder="https://example.com">
+              <small>Необов’язково, для корпоративного замовлення.</small></div>
+          </div>
+        </fieldset>
+        <fieldset id="product-fields">
+          <legend lang="uk" title="Вибір товару та кількості" dir="ltr">2. Товар і кількість</legend>
+          <div class="form-grid">
+            <div class="field"><label for="product-search">Знайти товар</label>
+              <input id="product-search" name="search" type="search" maxlength="60" placeholder="Наприклад, Vision" aria-describedby="search-status">
+              <small id="search-status" role="status">У каталозі 8 моделей.</small></div>
+            <div class="field"><label for="product">Товар *</label>
+              <select id="product" name="product" required>
+                <option value="" selected>Оберіть модель</option>
+                <optgroup label="Графічні адаптери" style="font-style: normal;" class="product-group" id="gpu-options">
+                  <option value="vision" data-price="8900" data-stock="12">BM Vision 8G — 8 900 грн</option>
+                  <option value="vision-kit" data-price="9150" data-stock="8">BM Vision 8G + HDMI — 9 150 грн</option>
+                </optgroup>
+                <optgroup label="Накопичувачі">
+                  <option value="swift" data-price="2600" data-stock="20">BM Swift 1TB — 2 600 грн</option>
+                  <option value="archive" data-price="2100" data-stock="15">BM Archive 2TB — 2 100 грн</option>
+                </optgroup>
+                <optgroup label="Оптичні приводи">
+                  <option value="disc" data-price="850" data-stock="6">BM Disc RW — 850 грн</option>
+                  <option value="portable" data-price="1200" data-stock="10">BM Disc Portable — 1 200 грн</option>
+                </optgroup>
+                <optgroup label="Аксесуари">
+                  <option value="mouse" data-price="450" data-stock="30">BM Click Pro — 450 грн</option>
+                  <option value="keyboard" data-price="650" data-stock="25">BM Type Classic — 650 грн</option>
+                </optgroup>
+              </select></div>
+            <div class="field"><label for="quantity">Кількість *</label>
+              <input id="quantity" name="quantity" type="number" value="1" min="1" max="30" step="1" required aria-describedby="stock-hint">
+              <small id="stock-hint">Оберіть модель, щоб побачити залишок.</small></div>
+            <div class="field total-card"><span>Вартість товарів</span><output id="total" for="product quantity" form="order-form">0 грн</output>
+              <label for="stock-meter">Частка доступного запасу</label>
+              <meter id="stock-meter" class="stock-meter" title="Кількість замовлених одиниць відносно залишку" max="30" min="0" high="24" low="1" optimum="1" value="0">0 із 30</meter>
+            </div>
+          </div>
+        </fieldset>
+        <fieldset id="delivery-fields">
+          <legend lang="uk" title="Бажані строки та спосіб отримання" dir="ltr">3. Отримання замовлення</legend>
+          <div class="form-grid">
+            <div class="field"><label for="delivery-method">Спосіб отримання</label>
+              <select id="delivery-method" name="delivery"><option value="pickup">Самовивіз</option><option value="post">Поштове відділення</option><option value="courier">Кур’єр</option></select></div>
+            <div class="field"><label for="delivery-week">Бажаний тиждень доставки</label>
+              <input id="delivery-week" name="week" type="week"><small>Необов’язково. Формат текстового введення: 2026-W43.</small></div>
+            <div class="field"><label for="purchase-month">Місяць запланованої покупки</label>
+              <input id="purchase-month" name="month" type="month"><small>Необов’язково. Формат: 2026-10.</small></div>
+            <div class="field"><label class="check-label" for="packaging"><input id="packaging" name="packaging" type="checkbox" value="recyclable" checked> Пакування для перероблення</label></div>
+          </div>
+        </fieldset>
+        <fieldset id="request-fields">
+          <legend lang="uk" title="Побажання до замовлення" dir="ltr">4. Уточнення</legend>
+          <label for="request">Для яких завдань обираєте техніку? *</label>
+          <textarea id="request" name="request" dirname="request.dir" lang="uk" title="Від 10 до 500 символів" required class="request-text" style="resize: vertical;" minlength="10" maxlength="500" rows="3" placeholder="Наприклад, потрібен накопичувач для навчання та роботи з фото."></textarea>
+          <label class="check-label" for="confirmation"><input id="confirmation" name="confirmation" type="checkbox" value="confirmed" required> Дані навчального замовлення перевірено *</label>
+        </fieldset>
+        <div id="completion-panel" class="completion-panel">
+          <label for="form-progress">Заповнено обов’язкових полів: <span id="progress-text">1 із 7</span></label>
+          <progress max="7" id="form-progress" lang="uk" value="1">1 із 7</progress>
+          <p id="validation-status" role="status" aria-live="polite"></p>
+        </div>
+        <div class="form-actions">
+          <input id="submit-order" type="submit" value="Відправити інформацію" formtarget="_self" disabled>
+          <button form="order-form" type="reset" name="clear">Очистити</button>
+          <input id="preview-order" type="image" src="assets/images/check-order.svg" alt="Перевірити форму" width="180" height="42" formtarget="_self" disabled>
+        </div>
+      </form>
+      <section id="order-result" class="order-result" aria-labelledby="result-title" hidden>
+        <h3 id="result-title">Дані перевірено</h3>
+        <p id="result-message"></p>
+        <dl id="result-details"></dl>
+      </section>
+    </section>
+    <section class="content-section typography-section" aria-labelledby="typography-title">
+      <h2 id="typography-title">Приклади оформлення тексту</h2>
+      <p class="typography-intro">Підбір техніки починається з ваших завдань. Порівняйте моделі, уточніть сумісність і перевірте комплектацію.</p>
+      <details id="learning-details">
+        <summary title="Приклади HTML і CSS варіанта 5" class="learning-summary" id="learning-summary">Шрифти та додаткові елементи варіанта 5</summary>
+        <div id="typography-samples" class="typography-samples">
+          <p class="family-sans">ByteMarket: sans-serif, вага 900.</p>
+          <p class="family-lucida">ByteMarket: Lucida Sans Unicode, легший шрифт.</p>
+          <p class="family-regular">ByteMarket: Lucida Sans Regular, small-caps.</p>
+          <p class="family-geneva">ByteMarket: Geneva, semi-condensed.</p>
+          <p class="family-narrow">ByteMarket: Arial Narrow, extra-expanded.</p>
+          <p class="system-font">Шрифт системних піктограм: font: icon.</p>
+          <pre class="preformatted-sample">Модель       Кількість
+BM Vision    1</pre>
+          <label for="operator-note">Службова примітка (лише для перегляду)</label>
+          <textarea id="operator-note" disabled dirname="operator-note.dir" lang="uk" title="Недоступне для редагування поле" class="disabled-text" style="resize: none;" rows="2">Навчальний каталог. Дані вигадані.</textarea>
+          <button form="order-form" type="button" name="unavailable" disabled>Недоступна дія</button>
+          <p>Застарілий тег keygen наведено за умовою; сучасний браузер не створює через нього ключі.</p>
+          <keygen id="legacy-keygen" dir="ltr" form="order-form" style="display: none;" lang="uk"></keygen>
+          <p class="legacy-speech">Звукові властивості попередніх версій CSS наведено в forms.css для навчального прикладу.</p>
+        </div>
+      </details>
+    </section>
+    <aside class="interaction-panel" aria-label="Журнал подій">
+      <h2>Журнал подій</h2>
+      <p id="interaction-status" role="status">Взаємодійте зі сторінкою, щоб побачити повідомлення.</p>
+      <ol id="event-log" aria-label="Останні 40 подій"></ol>
+      <button id="clear-events" type="button">Очистити журнал</button>
+    </aside>
+  </main>
+  <footer class="site-footer"><small>Максим Гінчак · Лабораторна робота №8 · Варіант 5</small></footer>
+</body>
+</html>

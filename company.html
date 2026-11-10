@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8">
+  <meta name="Author" content="Максим Гінчак">
+  <meta name="Description" content="Інформація про віртуальну компанію ByteMarket">
+  <meta name="Keywords" content="комп'ютерні аксесуари, графічний адаптер, CDROM, CDRW, вінчестер">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ByteMarket — про компанію</title>
+  <link rel="stylesheet" href="assets/css/styles.css">
+  <link rel="stylesheet" href="assets/css/javascript.css">
+  <script src="assets/js/events.js" defer></script>
+</head>
+<body>
+  <header class="site-header">
+    <h1>ByteMarket</h1>
+    <nav id="site-navigation" aria-label="Головна навігація">
+      <a href="index.html">Автор</a>
+      <a class="active" aria-current="page" href="company.html">Про компанію</a>
+      <a href="news.html">Новини</a>
+      <a href="lists.html">Списки</a>
+      <a href="menu.html">Меню</a>
+      <a href="tables.html">Таблиці</a>
+      <a href="forms.html">Форми</a>
+      <a href="svg.html">SVG</a>
+      <a href="javascript.html">JavaScript</a>
+          <a href="canvas.html">Canvas</a>
+    </nav>
+  </header>
+
+  <main class="site-main">
+    <section class="content-section">
+      <h2>Про компанію</h2>
+      <img
+        id="company-image"
+        title="Комп'ютер із графічним адаптером"
+        lang="uk"
+        dir="ltr"
+        src="assets/images/graphics-card.jpg"
+        class="main-image"
+        alt="Внутрішні компоненти комп'ютера з графічним адаптером">
+
+      <p>
+        <strong id="company-name" title="Назва віртуальної компанії">ByteMarket</strong> —
+        це віртуальний магазин комп'ютерних аксесуарів. Ми допомагаємо клієнтам обрати
+        <em class="important" lang="uk">сумісні та надійні комплектуючі</em> для домашніх і офісних ПК.
+      </p>
+
+      <p>
+        У магазині представлені <abbr class="term" lang="uk" title="графічні процесори">GPU</abbr>,
+        оптичні пристрої та накопичувачі. Наш принцип:
+        <q id="company-quote" dir="ltr">просто пояснюємо — точно підбираємо</q>.
+      </p>
+
+      <p>Щоб знайти товар на сторінці, натисніть <kbd class="keyboard" lang="uk">Ctrl + F</kbd>.</p>
+    </section>
+
+    <section class="content-section">
+      <h2>Каталог аксесуарів</h2>
+      <table>
+        <caption>Приклади товарів за обов'язковими полями варіанта №5</caption>
+        <thead>
+          <tr>
+            <th>Категорія</th>
+            <th>Тип</th>
+            <th>Виробник</th>
+            <th>Пам'ять / частота / об'єм</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Графічний адаптер</td>
+            <td>Дискретний</td>
+            <td>ASUS</td>
+            <td>8 ГБ</td>
+          </tr>
+          <tr>
+            <td>Пристрій CDROM/CDRW</td>
+            <td>Внутрішній CDRW</td>
+            <td>LG</td>
+            <td>52x</td>
+          </tr>
+          <tr>
+            <td>Вінчестер</td>
+            <td>HDD</td>
+            <td>Western Digital</td>
+            <td>2 ТБ</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+    <section class="content-section">
+      <h2>Форма підбору комплектуючих</h2>
+      <form action="#" method="get">
+        <fieldset>
+          <legend>Графічний адаптер</legend>
+          <label>Тип
+            <select name="gpu-type">
+              <option>Дискретний</option>
+              <option>Інтегрований</option>
+            </select>
+          </label>
+          <label>Виробник <input type="text" name="gpu-manufacturer" placeholder="Наприклад, ASUS"></label>
+          <label>Пам'ять, ГБ <input type="number" name="gpu-memory" min="1" max="48"></label>
+        </fieldset>
+
+        <fieldset>
+          <legend>Пристрій CDROM/CDRW</legend>
+          <label>Тип
+            <select name="optical-type">
+              <option>CDROM</option>
+              <option>CDRW</option>
+            </select>
+          </label>
+          <label>Виробник <input type="text" name="optical-manufacturer" placeholder="Наприклад, LG"></label>
+          <label>Частота (швидкість) <input type="text" name="optical-speed" placeholder="Наприклад, 52x"></label>
+        </fieldset>
+
+        <fieldset>
+          <legend>Вінчестер</legend>
+          <label>Тип
+            <select name="drive-type">
+              <option>HDD</option>
+              <option>SSD</option>
+            </select>
+          </label>
+          <label>Виробник <input type="text" name="drive-manufacturer" placeholder="Наприклад, Western Digital"></label>
+          <label>Об'єм, ГБ <input type="number" name="drive-capacity" min="128" step="128"></label>
+        </fieldset>
+
+        <button type="submit">Підібрати</button>
+      </form>
+    </section>
+
+    <section class="content-section">
+      <h2>Контакти</h2>
+      <pre id="work-hours" title="Графік роботи">
+Понеділок - п'ятниця: 09:00 - 18:00
+Субота:                10:00 - 15:00
+Неділя:                вихідний</pre>
+
+      <address dir="ltr">
+        м. Чернівці, вул. Комп'ютерна, 5<br>
+        Телефон: +38 (000) 000-00-00<br>
+        Email: <a href="mailto:info@bytemarket.example">info@bytemarket.example</a>
+      </address>
+    </section>
+    <aside class="interaction-panel" aria-label="Журнал подій">
+      <h2>Журнал подій</h2>
+      <p id="interaction-status" role="status">Взаємодійте зі сторінкою, щоб побачити повідомлення.</p>
+      <ol id="event-log" aria-label="Останні 40 подій"></ol>
+      <button id="clear-events" type="button">Очистити журнал</button>
+    </aside>
+  </main>
+
+  <footer class="site-footer">
+    <small>Автор сторінки: Максим Гінчак. Лабораторна робота №8.</small>
+  </footer>
+</body>
+</html>

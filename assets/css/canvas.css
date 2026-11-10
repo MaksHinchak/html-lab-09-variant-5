@@ -1,0 +1,8 @@
+.canvas-frame { margin: 24px 0; border: 1px solid var(--line); border-radius: 12px; overflow: hidden; background: white; }
+#drawing-canvas { display: block; width: 100%; height: auto; aspect-ratio: 780 / 540; }
+.canvas-frame figcaption { padding: 12px 18px; background: #f2f8fb; }
+.canvas-fields { display: grid; grid-template-columns: repeat(2, 1fr); gap: 12px 20px; }
+#canvas-controls { max-width: none; box-sizing: border-box; }
+#canvas-controls input, #canvas-controls select { max-width: none; }
+#canvas-status { min-height: 1.6em; padding: 12px; background: #e8f8f4; border-radius: 8px; }
+@media (max-width: 600px) { .canvas-fields { grid-template-columns: 1fr; } }

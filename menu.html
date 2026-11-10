@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8">
+  <meta name="Author" content="Максим Гінчак">
+  <meta name="Description" content="Меню та внутрішні посилання сайту ByteMarket — лабораторна робота №7">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ByteMarket — меню сайту</title>
+  <link rel="stylesheet" href="assets/css/styles.css">
+  <link rel="icon" href="assets/images/favicon.svg" type="image/svg+xml" sizes="any" title="ByteMarket">
+  <link rel="stylesheet" href="assets/css/javascript.css">
+  <script src="assets/js/events.js" defer></script>
+</head>
+<body>
+  <header class="site-header" id="top">
+    <h1>Меню ByteMarket</h1>
+    <nav id="site-navigation" aria-label="Головна навігація">
+      <a href="index.html">Автор</a>
+      <a href="company.html">Про компанію</a>
+      <a href="news.html">Новини</a>
+      <a href="lists.html">Списки</a>
+      <a class="active" aria-current="page" href="menu.html">Меню</a>
+      <a href="tables.html">Таблиці</a>
+      <a href="forms.html">Форми</a>
+      <a href="svg.html">SVG</a>
+      <a href="javascript.html">JavaScript</a>
+          <a href="canvas.html">Canvas</a>
+    </nav>
+  </header>
+
+  <main class="site-main">
+    <section class="content-section">
+      <p class="eyebrow">Лабораторна робота №8 · Варіант 5</p>
+      <h2>Навігація проєктом</h2>
+      <p>Це меню веде до сторінок сайту та до розділів цієї самої сторінки.</p>
+      <menu class="project-menu" type="toolbar" title="Меню проєкту ByteMarket" style="list-style-type: none;">
+        <li><a name="author-link" id="author-link" href="index.html" target="_self" tabindex="0" accesskey="a">Про автора</a></li>
+        <li><a href="company.html">Каталог і форма</a></li>
+        <li><a href="news.html">Новини компанії</a></li>
+        <li><a href="lists.html">Списки товарів</a></li>
+        <li><a href="#useful-links">Корисні посилання нижче ↓</a></li>
+      <li><a href="tables.html">Таблиці товарів</a></li>
+        <li><a href="forms.html">Форми замовлення</a></li>
+        <li><a href="svg.html">Векторна графіка SVG</a></li>
+        <li><a href="javascript.html">Завдання JavaScript</a></li>
+      </menu>
+    </section>
+
+    <section class="content-section" id="quick-areas">
+      <h2>Перейти до розділу списків</h2>
+      <nav id="section-navigation" aria-label="Розділи сторінки списків">
+        <a href="lists.html#categories">Категорії</a>
+        <a href="lists.html#selection-steps">Як обрати</a>
+        <a href="lists.html#terms">Словник</a>
+      </nav>
+      <p>Назву бренду <bdi id="brand-name">ByteMarket</bdi> ізольовано від напрямку навколишнього тексту тегом <code>bdi</code>.</p>
+    </section>
+
+    <section class="content-section" id="useful-links">
+      <h2>Корисні посилання</h2>
+      <p>Тут є внутрішнє посилання на початок цієї сторінки та файл звіту для завантаження.</p>
+      <menu class="resource-menu" title="Додаткові посилання">
+        <menuitem dir="ltr" class="legacy-menu-item" style="display: list-item;"><a href="#top">Повернутися до початку сторінки</a></menuitem>
+        <menuitem dir="ltr" class="legacy-menu-item" style="display: list-item;"><a href="report/lab8-canvas-variant5.pdf" download="lab8-canvas-variant5.pdf">Завантажити звіт PDF</a></menuitem>
+      </menu>
+      <p class="legacy-note">Тег <code>menuitem</code> є застарілим. Посилання всередині нього залишаються доступними в сучасному браузері.</p>
+    </section>
+
+    <section class="content-section" id="announcement">
+      <h2>Оголошення</h2>
+      <marquee id="store-marquee" class="store-marquee" truespeed vspace="8" direction="left" style="color: #0c3158;" scrollamount="3">Нові добірки графічних адаптерів, приводів CDRW і накопичувачів уже в каталозі ByteMarket.</marquee>
+      <p class="legacy-note">Нові добірки графічних адаптерів, приводів CDRW і накопичувачів уже в каталозі ByteMarket. Тег <code>marquee</code> використано за умовою варіанта.</p>
+    </section>
+    <aside class="interaction-panel" aria-label="Журнал подій">
+      <h2>Журнал подій</h2>
+      <p id="interaction-status" role="status">Взаємодійте зі сторінкою, щоб побачити повідомлення.</p>
+      <ol id="event-log" aria-label="Останні 40 подій"></ol>
+      <button id="clear-events" type="button">Очистити журнал</button>
+    </aside>
+  </main>
+  <footer class="site-footer"><small>Максим Гінчак · Лабораторна робота №8 · Варіант 5</small></footer>
+</body>
+</html>

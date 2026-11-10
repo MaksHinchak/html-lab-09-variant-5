@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="author" content="Максим Гінчак">
+  <meta name="description" content="Лабораторна №7: події, властивості document, регулярні вирази та масиви. Варіант 5.">
+  <title>ByteMarket - JavaScript, варіант 5</title>
+  <link rel="stylesheet" href="assets/css/styles.css">
+  <link rel="stylesheet" href="assets/css/javascript.css">
+  <script src="assets/js/events.js" defer></script>
+  <script src="assets/js/tasks.js" defer></script>
+</head>
+<body>
+  <header class="site-header">
+    <h1>ByteMarket</h1>
+    <nav id="site-navigation" aria-label="Головна навігація">
+      <a href="index.html">Автор</a>
+      <a href="company.html">Про компанію</a>
+      <a href="news.html">Новини</a>
+      <a href="lists.html">Списки</a>
+      <a href="menu.html">Меню</a>
+      <a href="tables.html">Таблиці</a>
+      <a href="forms.html">Форми</a>
+      <a href="svg.html">SVG</a>
+      <a class="active" aria-current="page" href="javascript.html">JavaScript</a>
+          <a href="canvas.html">Canvas</a>
+    </nav>
+  </header>
+  <main class="site-main">
+    <p class="task-label">ЛАБОРАТОРНА №7 · ВАРІАНТ 5</p>
+    <h2>JavaScript у дії</h2>
+    <div class="task-intro">
+      <p>Дослідіть поточну сторінку, знайдіть слова у тексті та приберіть нулі з масиву.</p>
+      <p>Наведіть курсор на заголовок, <b>жирний текст</b> або <i>курсив</i>. Одне натискання змінює виділення, подвійне - колір та нахил. Клавіша Enter також перемикає виділення.</p>
+    </div>
+    <noscript><p class="task-intro">Для виконання завдань увімкніть JavaScript у браузері.</p></noscript>
+
+    <section id="document-task" class="task-section">
+      <p class="task-label">ЗАВДАННЯ 3.5 · ОБ’ЄКТ DOCUMENT</p>
+      <h2>Властивості поточного документа</h2>
+      <p>Кнопка Run Task виведе назви та значення доступних властивостей <code>document</code>, зокрема URL, title, forms, images та методи.</p>
+      <form id="document-form" data-task>
+        <div class="task-actions">
+          <button type="submit" disabled>Run Task</button>
+          <button type="reset">Очистити результат</button>
+        </div>
+        <p id="document-status" role="status"></p>
+        <label for="document-result">Результат дослідження</label>
+        <textarea id="document-result" rows="10" readonly spellcheck="false"></textarea>
+      </form>
+    </section>
+
+    <section id="search-task" class="task-section">
+      <p class="task-label">ЗАВДАННЯ 5.2.5 · РЕГУЛЯРНІ ВИРАЗИ</p>
+      <h2>Пошук слів на «п…я»</h2>
+      <p>Знайдіть слова, які починаються літерою «п» і закінчуються літерою «я». Великі й малі літери рівнозначні; апостроф і дефіс можуть бути частиною слова.</p>
+      <form id="search-form" data-task>
+        <label for="search-text">Вхідний текст</label>
+        <textarea id="search-text" rows="4" required>Паляниця, пісня та подія. Плаття, полум’я і пір'я; сім'я, яблуня та поле.</textarea>
+        <div class="task-actions">
+          <button type="submit" disabled>Пошук інформації</button>
+          <button type="reset">Початковий текст</button>
+        </div>
+        <label for="search-result">Знайдені слова</label>
+        <textarea id="search-result" rows="7" readonly spellcheck="false"></textarea>
+      </form>
+    </section>
+
+    <section id="array-task" class="task-section">
+      <p class="task-label">ЗАВДАННЯ 6.5 · МАСИВИ</p>
+      <h2>Масив B без нульових елементів</h2>
+      <p>Введіть елементи A через пробіл, кому або крапку з комою. Десятковий знак - крапка. Розмір N визначається кількістю введених чисел.</p>
+      <form id="array-form" data-task>
+        <label for="array-input">Елементи масиву A</label>
+        <input id="array-input" type="text" value="0, 5, -3, 0, 8, 0, -2" required aria-describedby="array-help">
+        <p id="array-help">Порядок чисел зберігається; 0, -0 та 0.0 вилучаються. Якщо всі елементи нульові, результат B = [].</p>
+        <div class="task-actions">
+          <button type="submit" disabled>Array Task</button>
+          <button type="reset">Початковий масив</button>
+        </div>
+        <label for="array-result">Результат обробки</label>
+        <textarea id="array-result" rows="6" readonly spellcheck="false"></textarea>
+      </form>
+    </section>
+
+    <section id="image-task" class="task-section">
+      <p class="task-label">ЗАВДАННЯ 4 · ПОДІЇ МИШІ</p>
+      <h2>Зображення, що реагують на дії</h2>
+      <p>Наведення змінює насиченість, натискання - масштаб і рамку. Повторне натискання повертає початковий вигляд. Дії відображаються у журналі нижче.</p>
+      <div class="image-demos">
+        <figure>
+          <img src="assets/images/graphics-card.jpg" alt="Відеокарта ByteMarket" width="960" height="1280" data-mouse-demo>
+          <figcaption>Фото товару</figcaption>
+        </figure>
+        <figure>
+          <img src="assets/svg/variant5-static.svg" alt="SVG-композиція варіанта 5" width="780" height="540" data-mouse-demo>
+          <figcaption>Малюнок із лабораторної №6</figcaption>
+        </figure>
+      </div>
+    </section>
+    <aside class="interaction-panel" aria-label="Журнал подій">
+      <h2>Журнал подій</h2>
+      <p id="interaction-status" role="status">Взаємодійте зі сторінкою, щоб побачити повідомлення.</p>
+      <ol id="event-log" aria-label="Останні 40 подій"></ol>
+      <button id="clear-events" type="button">Очистити журнал</button>
+    </aside>
+  </main>
+  <footer class="site-footer"><small>Лабораторна робота №8. Варіант 5.</small></footer>
+</body>
+</html>
